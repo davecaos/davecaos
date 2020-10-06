@@ -1,7 +1,11 @@
 ### Hola! 👋
 
+![avatar](https://user-images.githubusercontent.com/6124495/95254042-ae71af00-07f5-11eb-9654-5b192ced3710.jpg)
 
-![avatar](https://user-images.githubusercontent.com/6124495/87262274-b1c3fb80-c48f-11ea-9446-ad5eb9b3f690.jpg)
+## Some stats from my repos.
+![My github stats](https://github-readme-stats.vercel.app/api?username=davecaos&count_private=true)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=davecaos&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+
 <!--
 **davecaos/davecaos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
