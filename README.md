@@ -1,6 +1,6 @@
 ### Hola! 👋
 
-![avatar](https://user-images.githubusercontent.com/6124495/95254042-ae71af00-07f5-11eb-9654-5b192ced3710.jpg)
+![avatar](https://user-images.githubusercontent.com/6124495/95254597-7fa80880-07f6-11eb-9da0-96192c0a06a8.jpg)
 
 ## Some stats from my repos.
 ![My github stats](https://github-readme-stats.vercel.app/api?username=davecaos&count_private=true)
