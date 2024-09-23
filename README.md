@@ -3,9 +3,11 @@
 </br>Full Stack & DevOps
 </em></p>
 
-[![Linkedin: David Cao](https://img.shields.io/badge/-DavidCao-blue?style=flat-square&logo=Linkedin&logoColor=white&link=[https://www.linkedin.com/in/johannasantos/](https://www.linkedin.com/in/davidcaoarg/))]([[https://www.linkedin.com/in/johannasantos/](https://www.linkedin.com/in/davidcaoarg/)](https://www.linkedin.com/in/davidcaoarg/))
-[![GitHub David](https://img.shields.io/github/followers/davecaos?label=follow&style=social)](https://github.com/davecaos)
-
+<p align="left">
+<a href="https://www.linkedin.com/in/davidcaoarg/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue" />
+</a>
+</p>
 
 ![avatar](https://user-images.githubusercontent.com/6124495/95254597-7fa80880-07f6-11eb-9da0-96192c0a06a8.jpg)
 
