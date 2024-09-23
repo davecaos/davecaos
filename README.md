@@ -1,4 +1,4 @@
-<h2>  Hola!👋  I'm David Cao <img src="https://media.giphy.com/media/3ohzdYDKUSkwOeXtrW/giphy.gif" width="50"></h2>
+<h2>  Hola!👋  I'm David Cao </h2>
 <p><em>I am Software Engineer
 </br>Full Stack & DevOps
 </em></p>
