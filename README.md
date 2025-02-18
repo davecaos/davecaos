@@ -9,7 +9,16 @@
 </a>
 </p>
 
-![avatar](https://user-images.githubusercontent.com/6124495/95254597-7fa80880-07f6-11eb-9da0-96192c0a06a8.jpg)
+
+```javascript
+const David = {
+  programming: [Typescript, Elixir, Python, Java, 'among others'],
+  tools: [Node, React, Flask],
+  dataBases: [PostgreSQL, MySQL]
+}
+```
+[![Programming Languages](https://skillicons.dev/icons?i=,js,ts,bash,py,elixir,c,rust)](https://skillicons.dev)
+
 
 ## Some stats from my repos.
 ![My github stats](https://github-readme-stats.vercel.app/api?username=davecaos&count_private=true)
