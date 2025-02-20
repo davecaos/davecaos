@@ -1,13 +1,6 @@
 <h2>  Hola!👋  I'm David Cao </h2>
 <p><em>I am Software Engineer
-</br>Full Stack & DevOps
 </em></p>
-
-<p align="left">
-<a href="https://www.linkedin.com/in/davidcaoarg/" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue" />
-</a>
-</p>
 
 
 ```javascript
