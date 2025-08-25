@@ -7,7 +7,7 @@
 const David = {
   programming: [Typescript, Elixir, Python, Java, 'among others'],
   tools: [Node, React, Flask],
-  dataBases: [PostgreSQL, MySQL]
+  dataBases: [PostgreSQL, MySQL, MongoDB]
 }
 ```
 [![Programming Languages](https://skillicons.dev/icons?i=,js,ts,bash,py,elixir,c,rust)](https://skillicons.dev)
