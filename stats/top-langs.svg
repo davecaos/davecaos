@@ -1,25 +1,41 @@
-<svg width="600" height="186" xmlns="http://www.w3.org/2000/svg">
-  <rect width="600" height="186" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-  <text x="25" y="35" fill="#c9d1d9" font-size="16" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Most Used Languages</text>
-  <clipPath id="bar-clip"><rect x="25" y="70" width="550" height="25" rx="5"/></clipPath>
-  <g clip-path="url(#bar-clip)">
-    <rect x="0" y="70" width="186.23" height="25" rx="0" fill="#3178c6"/><rect x="186.23" y="70" width="105.31" height="25" rx="0" fill="#f1e05a"/><rect x="291.54" y="70" width="82.52" height="25" rx="0" fill="#B83998"/><rect x="374.06" y="70" width="68.76" height="25" rx="0" fill="#00ADD8"/><rect x="442.82" y="70" width="42.53" height="25" rx="0" fill="#6e4a7e"/><rect x="485.35" y="70" width="36.93" height="25" rx="0" fill="#00B4AB"/><rect x="522.28" y="70" width="15.06" height="25" rx="0" fill="#ffaff3"/><rect x="537.34" y="70" width="12.66" height="25" rx="0" fill="#663399"/>
-  </g>
+<svg width="600" height="247" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="card-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="600" height="247" rx="12" fill="url(#bg-grad)" stroke="#30363d" stroke-width="1" filter="url(#card-shadow)"/>
+  <text x="30" y="38" fill="#e6edf3" font-size="18" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">Most Used Languages</text>
+  <line x1="30" y1="50" x2="120" y2="50" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <rect x="25" y="75" width="550" height="14" rx="7" fill="#21262d"/>
+  <rect x="25" y="75" width="186.23" height="14" rx="3" fill="#3178c6" opacity="0.9"/><rect x="213.23" y="75" width="105.31" height="14" rx="3" fill="#f1e05a" opacity="0.9"/><rect x="320.54" y="75" width="82.52" height="14" rx="3" fill="#B83998" opacity="0.9"/><rect x="405.06" y="75" width="68.76" height="14" rx="3" fill="#00ADD8" opacity="0.9"/><rect x="475.82" y="75" width="42.53" height="14" rx="3" fill="#6e4a7e" opacity="0.9"/><rect x="520.35" y="75" width="36.93" height="14" rx="3" fill="#00B4AB" opacity="0.9"/><rect x="559.28" y="75" width="15.06" height="14" rx="3" fill="#ffaff3" opacity="0.9"/><rect x="576.34" y="75" width="12.66" height="14" rx="3" fill="#663399" opacity="0.9"/>
   
-    <circle cx="25" cy="110" r="5" fill="#3178c6"/>
-    <text x="35" y="114" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">TypeScript 33.9%</text>
-    <circle cx="165" cy="110" r="5" fill="#f1e05a"/>
-    <text x="175" y="114" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">JavaScript 19.1%</text>
-    <circle cx="305" cy="110" r="5" fill="#B83998"/>
-    <text x="315" y="114" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Erlang 15.0%</text>
-    <circle cx="445" cy="110" r="5" fill="#00ADD8"/>
-    <text x="455" y="114" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Go 12.5%</text>
-    <circle cx="25" cy="132" r="5" fill="#6e4a7e"/>
-    <text x="35" y="136" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Elixir 7.7%</text>
-    <circle cx="165" cy="132" r="5" fill="#00B4AB"/>
-    <text x="175" y="136" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Dart 6.7%</text>
-    <circle cx="305" cy="132" r="5" fill="#ffaff3"/>
-    <text x="315" y="136" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Gleam 2.7%</text>
-    <circle cx="445" cy="132" r="5" fill="#663399"/>
-    <text x="455" y="136" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">CSS 2.3%</text>
+    <circle cx="30" cy="115" r="6" fill="#3178c6"/>
+    <text x="44" y="120" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">TypeScript</text>
+    <text x="265" y="120" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">33.9%</text>
+    <circle cx="30" cy="143" r="6" fill="#f1e05a"/>
+    <text x="44" y="148" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">JavaScript</text>
+    <text x="265" y="148" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">19.1%</text>
+    <circle cx="30" cy="171" r="6" fill="#B83998"/>
+    <text x="44" y="176" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">Erlang</text>
+    <text x="265" y="176" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">15.0%</text>
+    <circle cx="30" cy="199" r="6" fill="#00ADD8"/>
+    <text x="44" y="204" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">Go</text>
+    <text x="265" y="204" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">12.5%</text>
+    <circle cx="305" cy="115" r="6" fill="#6e4a7e"/>
+    <text x="319" y="120" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">Elixir</text>
+    <text x="540" y="120" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">7.7%</text>
+    <circle cx="305" cy="143" r="6" fill="#00B4AB"/>
+    <text x="319" y="148" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">Dart</text>
+    <text x="540" y="148" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">6.7%</text>
+    <circle cx="305" cy="171" r="6" fill="#ffaff3"/>
+    <text x="319" y="176" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">Gleam</text>
+    <text x="540" y="176" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">2.7%</text>
+    <circle cx="305" cy="199" r="6" fill="#663399"/>
+    <text x="319" y="204" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">CSS</text>
+    <text x="540" y="204" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">2.3%</text>
 </svg>
