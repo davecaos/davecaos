@@ -1,4 +1,4 @@
-<svg width="600" height="370" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="390" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg-grad2" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -8,41 +8,41 @@
       <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
     </filter>
   </defs>
-  <rect width="600" height="370" rx="12" fill="url(#bg-grad2)" stroke="#30363d" stroke-width="1" filter="url(#card-shadow2)"/>
+  <rect width="600" height="390" rx="12" fill="url(#bg-grad2)" stroke="#30363d" stroke-width="1" filter="url(#card-shadow2)"/>
   <text x="30" y="38" fill="#e6edf3" font-size="18" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">Top Contributed Repos</text>
   <line x1="30" y1="50" x2="130" y2="50" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
   
-    <rect x="12" y="45" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
-    <text x="30" y="64" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">kylie</text>
-    <rect x="30" y="76" width="70" height="18" rx="9" fill="#6e4a7e" opacity="0.25"/>
-    <circle cx="42" cy="85" r="4" fill="#6e4a7e"/>
-    <text x="51" y="89" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Elixir</text>
-    <text x="130" y="89" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 12</text>
-    <text x="185" y="89" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
-    <text x="30" y="124" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">minmay</text>
-    <rect x="30" y="136" width="70" height="18" rx="9" fill="#6e4a7e" opacity="0.25"/>
-    <circle cx="42" cy="145" r="4" fill="#6e4a7e"/>
-    <text x="51" y="149" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Elixir</text>
-    <text x="130" y="149" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 8</text>
-    <text x="185" y="149" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
-    <rect x="12" y="165" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
-    <text x="30" y="184" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">benetnasch</text>
-    <rect x="30" y="196" width="70" height="18" rx="9" fill="#ffaff3" opacity="0.25"/>
-    <circle cx="42" cy="205" r="4" fill="#ffaff3"/>
-    <text x="51" y="209" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Gleam</text>
-    <text x="130" y="209" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 8</text>
-    <text x="185" y="209" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
-    <text x="30" y="244" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">conferl</text>
-    <rect x="30" y="256" width="70" height="18" rx="9" fill="#B83998" opacity="0.25"/>
-    <circle cx="42" cy="265" r="4" fill="#B83998"/>
-    <text x="51" y="269" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Erlang</text>
-    <text x="130" y="269" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 2</text>
-    <text x="185" y="269" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
-    <rect x="12" y="285" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
-    <text x="30" y="304" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">websocket_example</text>
-    <rect x="30" y="316" width="70" height="18" rx="9" fill="#B83998" opacity="0.25"/>
-    <circle cx="42" cy="325" r="4" fill="#B83998"/>
-    <text x="51" y="329" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Erlang</text>
-    <text x="130" y="329" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 2</text>
-    <text x="185" y="329" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
+    <rect x="12" y="65" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
+    <text x="30" y="84" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">kylie</text>
+    <rect x="30" y="96" width="70" height="18" rx="9" fill="#6e4a7e" opacity="0.25"/>
+    <circle cx="42" cy="105" r="4" fill="#6e4a7e"/>
+    <text x="51" y="109" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Elixir</text>
+    <text x="130" y="109" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 12</text>
+    <text x="185" y="109" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
+    <text x="30" y="144" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">minmay</text>
+    <rect x="30" y="156" width="70" height="18" rx="9" fill="#6e4a7e" opacity="0.25"/>
+    <circle cx="42" cy="165" r="4" fill="#6e4a7e"/>
+    <text x="51" y="169" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Elixir</text>
+    <text x="130" y="169" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 8</text>
+    <text x="185" y="169" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
+    <rect x="12" y="185" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
+    <text x="30" y="204" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">benetnasch</text>
+    <rect x="30" y="216" width="70" height="18" rx="9" fill="#ffaff3" opacity="0.25"/>
+    <circle cx="42" cy="225" r="4" fill="#ffaff3"/>
+    <text x="51" y="229" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Gleam</text>
+    <text x="130" y="229" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 8</text>
+    <text x="185" y="229" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
+    <text x="30" y="264" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">conferl</text>
+    <rect x="30" y="276" width="70" height="18" rx="9" fill="#B83998" opacity="0.25"/>
+    <circle cx="42" cy="285" r="4" fill="#B83998"/>
+    <text x="51" y="289" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Erlang</text>
+    <text x="130" y="289" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 2</text>
+    <text x="185" y="289" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
+    <rect x="12" y="305" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
+    <text x="30" y="324" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">websocket_example</text>
+    <rect x="30" y="336" width="70" height="18" rx="9" fill="#B83998" opacity="0.25"/>
+    <circle cx="42" cy="345" r="4" fill="#B83998"/>
+    <text x="51" y="349" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Erlang</text>
+    <text x="130" y="349" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 2</text>
+    <text x="185" y="349" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
 </svg>

@@ -121,7 +121,7 @@ REPO_DATA=$(echo "$DATA" | jq -r '
 REPO_SVG_ITEMS=""
 ROW=0
 while IFS=$'\t' read -r name stars forks lang lang_color; do
-  ROW_Y=$((60 + ROW * 60))
+  ROW_Y=$((80 + ROW * 60))
   STRIPE_Y=$((ROW_Y - 15))
 
   # Alternating row background
@@ -155,7 +155,7 @@ while IFS=$'\t' read -r name stars forks lang lang_color; do
   ROW=$((ROW + 1))
 done <<< "$REPO_DATA"
 
-REPO_SVG_HEIGHT=$((60 + ROW * 60 + 10))
+REPO_SVG_HEIGHT=$((80 + ROW * 60 + 10))
 
 cat > "$STATS_DIR/top-repos.svg" <<SVGEOF
 <svg width="600" height="$REPO_SVG_HEIGHT" xmlns="http://www.w3.org/2000/svg">
