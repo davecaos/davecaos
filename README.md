@@ -7,8 +7,8 @@
 
 ## Some stats from my repos.
 
-<img height="163" src="stats/top-langs.svg" />
-<img height="250" src="stats/top-repos.svg" />
+<img width="600" src="stats/top-langs.svg" />
+<img width="600" src="stats/top-repos.svg" />
 <!--
 **davecaos/davecaos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
