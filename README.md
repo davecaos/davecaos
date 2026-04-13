@@ -7,8 +7,8 @@
 
 ## Some stats from my repos.
 
-<img height="163" src="https://github-readme-stats.vercel.app/api/top-langs/?username=davecaos&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact" />
-<img height="250" src="https://github-contributor-stats.vercel.app/api?username=davecaos&limit=5&theme=dark&combine_all_yearly_contributions=true" />
+<img height="163" src="stats/top-langs.svg" />
+<img height="250" src="stats/top-repos.svg" />
 <!--
 **davecaos/davecaos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
