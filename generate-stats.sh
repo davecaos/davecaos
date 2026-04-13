@@ -41,43 +41,35 @@ LANG_DATA=$(echo "$DATA" | jq -r '
 
 TOTAL_BYTES=$(echo "$LANG_DATA" | awk -F'\t' '{s+=$3} END{print s}')
 
-# Build bar segments with 2px gaps
+# Build bar segments (no gaps — seamless)
 BAR_SEGMENTS=""
-X_OFFSET=25
-BAR_WIDTH=550
-BAR_Y=75
-BAR_H=14
-IDX=0
+X_OFFSET=0
+BAR_Y=80
+BAR_H=8
 
-while IFS=$'\t' read -r name color bytes; do
-  width=$(awk "BEGIN{printf \"%.2f\", ($bytes/$TOTAL_BYTES)*$BAR_WIDTH}")
-  # Add 2px gap between segments (not before first)
-  if [ "$IDX" -gt 0 ]; then
-    X_OFFSET=$(awk "BEGIN{printf \"%.2f\", $X_OFFSET + 2}")
-  fi
-  BAR_SEGMENTS="$BAR_SEGMENTS"'<rect x="'"$X_OFFSET"'" y="'"$BAR_Y"'" width="'"$width"'" height="'"$BAR_H"'" rx="3" fill="'"$color"'" opacity="0.9"/>'
+while IFS=$'\t' read -r _ color bytes; do
+  width=$(awk "BEGIN{printf \"%.2f\", ($bytes/$TOTAL_BYTES)*540}")
+  BAR_SEGMENTS="$BAR_SEGMENTS"'<rect x="'"$X_OFFSET"'" y="'"$BAR_Y"'" width="'"$width"'" height="'"$BAR_H"'" fill="'"$color"'"/>'
   X_OFFSET=$(awk "BEGIN{printf \"%.2f\", $X_OFFSET + $width}")
-  IDX=$((IDX + 1))
 done <<< "$LANG_DATA"
 
-# Build 2-column legend (4 per column, 275px each)
+# Build 2-column legend
 LEGEND_ITEMS=""
-LEGEND_Y=115
+LEGEND_Y=116
 LEGEND_COL=0
 LEGEND_ROW=0
 ITEMS_PER_COL=4
-COL_WIDTH=275
+COL_WIDTH=270
 
 while IFS=$'\t' read -r name color bytes; do
   pct=$(awk "BEGIN{printf \"%.1f\", ($bytes/$TOTAL_BYTES)*100}")
-
   LX=$((30 + LEGEND_COL * COL_WIDTH))
-  LY=$((LEGEND_Y + LEGEND_ROW * 28))
+  LY=$((LEGEND_Y + LEGEND_ROW * 30))
 
   LEGEND_ITEMS="$LEGEND_ITEMS"'
-    <circle cx="'"$LX"'" cy="'"$LY"'" r="6" fill="'"$color"'"/>
-    <text x="'"$((LX + 14))"'" y="'"$((LY + 5))"'" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="500">'"$name"'</text>
-    <text x="'"$((LX + COL_WIDTH - 40))"'" y="'"$((LY + 5))"'" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">'"$pct"'%</text>'
+    <circle cx="'"$LX"'" cy="'"$LY"'" r="4" fill="'"$color"'"/>
+    <text x="'"$((LX + 14))"'" y="'"$((LY + 4))"'" fill="#ededed" font-size="13" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-weight="400">'"$name"'</text>
+    <text x="'"$((LX + COL_WIDTH - 40))"'" y="'"$((LY + 4))"'" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" text-anchor="end">'"$pct"'%</text>'
 
   LEGEND_ROW=$((LEGEND_ROW + 1))
   if [ "$LEGEND_ROW" -ge "$ITEMS_PER_COL" ]; then
@@ -86,25 +78,20 @@ while IFS=$'\t' read -r name color bytes; do
   fi
 done <<< "$LANG_DATA"
 
-MAX_ROW=$ITEMS_PER_COL
-SVG_HEIGHT=$((LEGEND_Y + MAX_ROW * 28 + 20))
+SVG_HEIGHT=$((LEGEND_Y + ITEMS_PER_COL * 30 + 16))
 
 cat > "$STATS_DIR/top-langs.svg" <<SVGEOF
 <svg width="600" height="$SVG_HEIGHT" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#161b22"/>
-    </linearGradient>
-    <filter id="card-shadow">
-      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-  <rect width="600" height="$SVG_HEIGHT" rx="12" fill="url(#bg-grad)" stroke="#30363d" stroke-width="1" filter="url(#card-shadow)"/>
-  <text x="30" y="38" fill="#e6edf3" font-size="18" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">Most Used Languages</text>
-  <line x1="30" y1="50" x2="120" y2="50" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-  <rect x="25" y="$BAR_Y" width="550" height="$BAR_H" rx="7" fill="#21262d"/>
-  $BAR_SEGMENTS
+  <rect width="600" height="$SVG_HEIGHT" rx="8" fill="#000"/>
+  <rect x="0.5" y="0.5" width="599" height="$((SVG_HEIGHT - 1))" rx="8" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="30" y="40" fill="#fff" font-size="15" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" letter-spacing="0.3">Most Used Languages</text>
+  <text x="30" y="60" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Aggregated across all repositories</text>
+  <clipPath id="bar-clip"><rect x="30" y="$BAR_Y" width="540" height="$BAR_H" rx="4"/></clipPath>
+  <g clip-path="url(#bar-clip)">
+    <rect x="30" y="$BAR_Y" width="540" height="$BAR_H" rx="4" fill="#1a1a1a"/>
+    $BAR_SEGMENTS
+  </g>
+  <line x1="30" y1="100" x2="570" y2="100" stroke="#222" stroke-width="1"/>
   $LEGEND_ITEMS
 </svg>
 SVGEOF
@@ -115,62 +102,57 @@ echo "Generated $STATS_DIR/top-langs.svg"
 REPO_DATA=$(echo "$DATA" | jq -r '
   [.data.user.repositories.nodes[] | select(.stargazerCount > 0)] |
   sort_by(-.stargazerCount) | .[0:5] | .[] |
-  "\(.name)\t\(.stargazerCount)\t\(.forkCount)\t\(.primaryLanguage.name // "—")\t\(.primaryLanguage.color // "#8b949e")"
+  "\(.name)\t\(.stargazerCount)\t\(.forkCount)\t\(.primaryLanguage.name // "—")\t\(.primaryLanguage.color // "#666")"
 ')
 
 REPO_SVG_ITEMS=""
 ROW=0
-while IFS=$'\t' read -r name stars forks lang lang_color; do
-  ROW_Y=$((80 + ROW * 60))
-  STRIPE_Y=$((ROW_Y - 15))
+TOTAL_REPOS=$(echo "$REPO_DATA" | wc -l | tr -d ' ')
 
-  # Alternating row background
-  if [ $((ROW % 2)) -eq 0 ]; then
-    REPO_SVG_ITEMS="$REPO_SVG_ITEMS"'
-    <rect x="12" y="'"$STRIPE_Y"'" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>'
-  fi
+while IFS=$'\t' read -r name stars forks lang lang_color; do
+  ROW_Y=$((78 + ROW * 56))
 
   # Repo name
   REPO_SVG_ITEMS="$REPO_SVG_ITEMS"'
-    <text x="30" y="'"$((ROW_Y + 4))"'" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">'"$name"'</text>'
+    <text x="30" y="'"$ROW_Y"'" fill="#ededed" font-size="14" font-weight="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">'"$name"'</text>'
 
-  # Language pill
-  PILL_X=30
-  PILL_Y=$((ROW_Y + 16))
-  REPO_SVG_ITEMS="$REPO_SVG_ITEMS"'
-    <rect x="'"$PILL_X"'" y="'"$PILL_Y"'" width="70" height="18" rx="9" fill="'"$lang_color"'" opacity="0.25"/>
-    <circle cx="'"$((PILL_X + 12))"'" cy="'"$((PILL_Y + 9))"'" r="4" fill="'"$lang_color"'"/>
-    <text x="'"$((PILL_X + 21))"'" y="'"$((PILL_Y + 13))"'" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">'"$lang"'</text>'
+  # Metadata row
+  META_Y=$((ROW_Y + 20))
 
-  # Stars (golden)
-  STAR_X=130
+  # Language dot + name
   REPO_SVG_ITEMS="$REPO_SVG_ITEMS"'
-    <text x="'"$STAR_X"'" y="'"$((PILL_Y + 13))"'" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; '"$stars"'</text>'
+    <circle cx="34" cy="'"$((META_Y - 4))"'" r="4" fill="'"$lang_color"'"/>
+    <text x="44" y="'"$META_Y"'" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">'"$lang"'</text>'
 
-  # Forks
-  FORK_X=185
+  # Stars
   REPO_SVG_ITEMS="$REPO_SVG_ITEMS"'
-    <text x="'"$FORK_X"'" y="'"$((PILL_Y + 13))"'" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; '"$forks"'</text>'
+    <text x="120" y="'"$META_Y"'" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&#9733; '"$stars"'</text>'
+
+  # Forks (only if > 0)
+  if [ "$forks" -gt 0 ]; then
+    REPO_SVG_ITEMS="$REPO_SVG_ITEMS"'
+    <text x="170" y="'"$META_Y"'" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&#9741; '"$forks"'</text>'
+  fi
+
+  # Separator line (not after last)
+  if [ "$ROW" -lt "$((TOTAL_REPOS - 1))" ]; then
+    SEP_Y=$((META_Y + 14))
+    REPO_SVG_ITEMS="$REPO_SVG_ITEMS"'
+    <line x1="30" y1="'"$SEP_Y"'" x2="570" y2="'"$SEP_Y"'" stroke="#222" stroke-width="1"/>'
+  fi
 
   ROW=$((ROW + 1))
 done <<< "$REPO_DATA"
 
-REPO_SVG_HEIGHT=$((80 + ROW * 60 + 10))
+REPO_SVG_HEIGHT=$((78 + ROW * 56 + 4))
 
 cat > "$STATS_DIR/top-repos.svg" <<SVGEOF
 <svg width="600" height="$REPO_SVG_HEIGHT" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg-grad2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#161b22"/>
-    </linearGradient>
-    <filter id="card-shadow2">
-      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-  <rect width="600" height="$REPO_SVG_HEIGHT" rx="12" fill="url(#bg-grad2)" stroke="#30363d" stroke-width="1" filter="url(#card-shadow2)"/>
-  <text x="30" y="38" fill="#e6edf3" font-size="18" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">Top Contributed Repos</text>
-  <line x1="30" y1="50" x2="130" y2="50" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <rect width="600" height="$REPO_SVG_HEIGHT" rx="8" fill="#000"/>
+  <rect x="0.5" y="0.5" width="599" height="$((REPO_SVG_HEIGHT - 1))" rx="8" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="30" y="40" fill="#fff" font-size="15" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" letter-spacing="0.3">Top Contributed Repos</text>
+  <text x="30" y="60" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Sorted by stargazer count</text>
+  <line x1="30" y1="66" x2="570" y2="66" stroke="#222" stroke-width="1"/>
   $REPO_SVG_ITEMS
 </svg>
 SVGEOF

@@ -1,48 +1,32 @@
-<svg width="600" height="390" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg-grad2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#161b22"/>
-    </linearGradient>
-    <filter id="card-shadow2">
-      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-  <rect width="600" height="390" rx="12" fill="url(#bg-grad2)" stroke="#30363d" stroke-width="1" filter="url(#card-shadow2)"/>
-  <text x="30" y="38" fill="#e6edf3" font-size="18" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">Top Contributed Repos</text>
-  <line x1="30" y1="50" x2="130" y2="50" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+<svg width="600" height="362" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="362" rx="8" fill="#000"/>
+  <rect x="0.5" y="0.5" width="599" height="361" rx="8" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="30" y="40" fill="#fff" font-size="15" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" letter-spacing="0.3">Top Contributed Repos</text>
+  <text x="30" y="60" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Sorted by stargazer count</text>
+  <line x1="30" y1="66" x2="570" y2="66" stroke="#222" stroke-width="1"/>
   
-    <rect x="12" y="65" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
-    <text x="30" y="84" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">kylie</text>
-    <rect x="30" y="96" width="70" height="18" rx="9" fill="#6e4a7e" opacity="0.25"/>
-    <circle cx="42" cy="105" r="4" fill="#6e4a7e"/>
-    <text x="51" y="109" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Elixir</text>
-    <text x="130" y="109" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 12</text>
-    <text x="185" y="109" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
-    <text x="30" y="144" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">minmay</text>
-    <rect x="30" y="156" width="70" height="18" rx="9" fill="#6e4a7e" opacity="0.25"/>
-    <circle cx="42" cy="165" r="4" fill="#6e4a7e"/>
-    <text x="51" y="169" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Elixir</text>
-    <text x="130" y="169" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 8</text>
-    <text x="185" y="169" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
-    <rect x="12" y="185" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
-    <text x="30" y="204" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">benetnasch</text>
-    <rect x="30" y="216" width="70" height="18" rx="9" fill="#ffaff3" opacity="0.25"/>
-    <circle cx="42" cy="225" r="4" fill="#ffaff3"/>
-    <text x="51" y="229" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Gleam</text>
-    <text x="130" y="229" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 8</text>
-    <text x="185" y="229" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
-    <text x="30" y="264" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">conferl</text>
-    <rect x="30" y="276" width="70" height="18" rx="9" fill="#B83998" opacity="0.25"/>
-    <circle cx="42" cy="285" r="4" fill="#B83998"/>
-    <text x="51" y="289" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Erlang</text>
-    <text x="130" y="289" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 2</text>
-    <text x="185" y="289" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
-    <rect x="12" y="305" width="576" height="55" rx="6" fill="#161b22" opacity="0.5"/>
-    <text x="30" y="324" fill="#58a6ff" font-size="15" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">websocket_example</text>
-    <rect x="30" y="336" width="70" height="18" rx="9" fill="#B83998" opacity="0.25"/>
-    <circle cx="42" cy="345" r="4" fill="#B83998"/>
-    <text x="51" y="349" fill="#c9d1d9" font-size="11" font-family="Segoe UI, Helvetica, Arial, sans-serif">Erlang</text>
-    <text x="130" y="349" fill="#e3b341" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9733; 2</text>
-    <text x="185" y="349" fill="#8b949e" font-size="12" font-family="Segoe UI, Helvetica, Arial, sans-serif">&#9741; 0</text>
+    <text x="30" y="78" fill="#ededed" font-size="14" font-weight="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">kylie</text>
+    <circle cx="34" cy="94" r="4" fill="#6e4a7e"/>
+    <text x="44" y="98" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Elixir</text>
+    <text x="120" y="98" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&#9733; 12</text>
+    <line x1="30" y1="112" x2="570" y2="112" stroke="#222" stroke-width="1"/>
+    <text x="30" y="134" fill="#ededed" font-size="14" font-weight="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">minmay</text>
+    <circle cx="34" cy="150" r="4" fill="#6e4a7e"/>
+    <text x="44" y="154" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Elixir</text>
+    <text x="120" y="154" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&#9733; 8</text>
+    <line x1="30" y1="168" x2="570" y2="168" stroke="#222" stroke-width="1"/>
+    <text x="30" y="190" fill="#ededed" font-size="14" font-weight="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">benetnasch</text>
+    <circle cx="34" cy="206" r="4" fill="#ffaff3"/>
+    <text x="44" y="210" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Gleam</text>
+    <text x="120" y="210" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&#9733; 8</text>
+    <line x1="30" y1="224" x2="570" y2="224" stroke="#222" stroke-width="1"/>
+    <text x="30" y="246" fill="#ededed" font-size="14" font-weight="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">conferl</text>
+    <circle cx="34" cy="262" r="4" fill="#B83998"/>
+    <text x="44" y="266" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Erlang</text>
+    <text x="120" y="266" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&#9733; 2</text>
+    <line x1="30" y1="280" x2="570" y2="280" stroke="#222" stroke-width="1"/>
+    <text x="30" y="302" fill="#ededed" font-size="14" font-weight="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">websocket_example</text>
+    <circle cx="34" cy="318" r="4" fill="#B83998"/>
+    <text x="44" y="322" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">Erlang</text>
+    <text x="120" y="322" fill="#666" font-size="12" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">&#9733; 2</text>
 </svg>
