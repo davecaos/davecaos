@@ -53,13 +53,13 @@ ITEMS_PER_ROW=4
 
 while IFS=$'\t' read -r name color bytes; do
   pct=$(awk "BEGIN{printf \"%.1f\", ($bytes/$TOTAL_BYTES)*100}")
-  width=$(awk "BEGIN{printf \"%.2f\", ($bytes/$TOTAL_BYTES)*370}")
+  width=$(awk "BEGIN{printf \"%.2f\", ($bytes/$TOTAL_BYTES)*550}")
 
   BAR_SEGMENTS="$BAR_SEGMENTS"'<rect x="'"$X_OFFSET"'" y="70" width="'"$width"'" height="25" rx="0" fill="'"$color"'"/>'
   X_OFFSET=$(awk "BEGIN{printf \"%.2f\", $X_OFFSET + $width}")
 
   # Legend position
-  LX=$((25 + LEGEND_COL * 95))
+  LX=$((25 + LEGEND_COL * 140))
   LY=$((LEGEND_Y + LEGEND_ROW * 22))
   LEGEND_ITEMS="$LEGEND_ITEMS"'
     <circle cx="'"$LX"'" cy="'"$LY"'" r="5" fill="'"$color"'"/>
@@ -77,10 +77,10 @@ done <<< "$LANG_DATA"
 SVG_HEIGHT=$((LEGEND_Y + (LEGEND_ROW + 1) * 22 + 10))
 
 cat > "$STATS_DIR/top-langs.svg" <<SVGEOF
-<svg width="420" height="$SVG_HEIGHT" xmlns="http://www.w3.org/2000/svg">
-  <rect width="420" height="$SVG_HEIGHT" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<svg width="600" height="$SVG_HEIGHT" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="$SVG_HEIGHT" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
   <text x="25" y="35" fill="#c9d1d9" font-size="16" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Most Used Languages</text>
-  <clipPath id="bar-clip"><rect x="25" y="70" width="370" height="25" rx="5"/></clipPath>
+  <clipPath id="bar-clip"><rect x="25" y="70" width="550" height="25" rx="5"/></clipPath>
   <g clip-path="url(#bar-clip)">
     $BAR_SEGMENTS
   </g>
@@ -113,8 +113,8 @@ done <<< "$REPO_DATA"
 REPO_SVG_HEIGHT=$((65 + ROW * 50 + 15))
 
 cat > "$STATS_DIR/top-repos.svg" <<SVGEOF
-<svg width="420" height="$REPO_SVG_HEIGHT" xmlns="http://www.w3.org/2000/svg">
-  <rect width="420" height="$REPO_SVG_HEIGHT" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<svg width="600" height="$REPO_SVG_HEIGHT" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="$REPO_SVG_HEIGHT" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
   <text x="25" y="35" fill="#c9d1d9" font-size="16" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Top Contributed Repos</text>
   $REPO_SVG_ITEMS
 </svg>
