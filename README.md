@@ -2,7 +2,7 @@
 <p><em>I am Software Engineer
 </em></p>
 
-[![Programming Languages](https://skillicons.dev/icons?i=,js,ts,bash,py,elixir,c,rust)](https://skillicons.dev)
+[![Programming Languages](https://skillicons.dev/icons?i=js,ts,bash,py,elixir,c,rust)](https://skillicons.dev)
 
 
 ## Some stats from my repos.
