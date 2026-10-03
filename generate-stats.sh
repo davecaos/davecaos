@@ -2,6 +2,8 @@
 # Generates GitHub profile stats SVGs using the GitHub CLI (gh).
 # Usage: ./generate-stats.sh
 # Requirements: gh (GitHub CLI) authenticated, jq, awk, sort
+# Runs weekly in CI (.github/workflows/update-stats.yml) with GH_TOKEN set to
+# the STATS_TOKEN secret, so private repos count toward the languages card.
 
 set -euo pipefail
 
@@ -16,6 +18,7 @@ DATA=$(gh api graphql -f query='
     repositories(first: 100, ownerAffiliations: OWNER) {
       nodes {
         name
+        isPrivate
         stargazerCount
         forkCount
         primaryLanguage { name color }
@@ -100,7 +103,7 @@ echo "Generated $STATS_DIR/top-langs.svg"
 
 # ── Top Repos SVG ─────────────────────────────────────────────────────────
 REPO_DATA=$(echo "$DATA" | jq -r '
-  [.data.user.repositories.nodes[] | select(.stargazerCount > 0)] |
+  [.data.user.repositories.nodes[] | select((.isPrivate | not) and .stargazerCount > 0)] |
   sort_by(-.stargazerCount) | .[0:5] | .[] |
   "\(.name)\t\(.stargazerCount)\t\(.forkCount)\t\(.primaryLanguage.name // "—")\t\(.primaryLanguage.color // "#666")"
 ')
